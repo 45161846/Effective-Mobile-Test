@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/course_details_graph"
+    app:startDestination="@id/courseDetailsFragment">
+
+    <fragment
+        android:id="@+id/courseDetailsFragment"
+        android:name="com.effectivemobiletask.details.impl.CourseDetailsFragment"
+        android:label="Course Details">
+        <argument
+            android:name="course"
+            app:argType="com.effectivemobiletask.domain.model.Course" />
+    </fragment>
+
+</navigation>

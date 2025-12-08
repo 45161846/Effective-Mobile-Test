@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/auth_graph">
+
+    <!-- Auth Flow -->
+    <include app:graph="@navigation/auth_graph" />
+
+    <navigation
+        android:id="@+id/main_tabs_graph"
+        app:startDestination="@id/courses_graph">
+
+        <include app:graph="@navigation/courses_graph" />
+        <include app:graph="@navigation/favorites_graph" />
+        <include app:graph="@navigation/account_graph" />
+
+        <action
+            android:id="@+id/action_tab_courses"
+            app:destination="@id/courses_graph"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_tab_favorites"
+            app:destination="@id/favorites_graph"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_tab_account"
+            app:destination="@id/account_graph"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="false" />
+
+    </navigation>
+
+    <include app:graph="@navigation/course_details_graph" />
+
+    <action
+        android:id="@+id/action_global_main_tabs"
+        app:destination="@id/main_tabs_graph"
+        app:popUpTo="@id/main_nav_graph"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_course_details"
+        app:destination="@id/course_details_graph" />
+
+</navigation>

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.effectivemobiletask.api"
+    namespace = "com.effectivemobiletask.feature.auth.api"
     compileSdk = 34
 
     defaultConfig {
